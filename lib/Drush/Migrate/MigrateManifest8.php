@@ -56,7 +56,7 @@ class MigrateManifest8 implements MigrateInterface {
 
   public function import() {
 
-    $this->setupLegacyDb();
+    //$this->setupLegacyDb();
     $migration_ids = array();
     $migrations = array();
 
@@ -96,7 +96,7 @@ class MigrateManifest8 implements MigrateInterface {
     }
 
     // Warn the user if any migrations were not found.
-    $nonexistent_migrations = array_diff(array_keys($migration_ids), array_keys($migrations));
+    $nonexistent_migrations = array_diff(array_values($migration_ids), array_keys($migrations));
     if (count($nonexistent_migrations) > 0) {
       drush_log(dt('The following migrations were not found: !migrations', array(
         '!migrations' => implode(', ', $nonexistent_migrations),

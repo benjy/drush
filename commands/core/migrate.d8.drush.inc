@@ -19,7 +19,7 @@ function migrate_drush_command() {
       'legacy-db-url' => array(
         'description' => 'A Drupal 6 style database URL.',
         'example-value' => 'mysql://root:pass@127.0.0.1/db',
-        'required' => TRUE,
+        'required' => FALSE,
       ),
     ),
     'drupal dependencies' => array('migrate_drupal'),
